@@ -11,12 +11,14 @@ const Product = (props) => {
 
   return (
     <div
-      class={`h-48 w-48 top-0 left-0 relative border-2 border-slate-300 rounded-xl ${
+      class={`h-full w-full top-0 left-0 relative border-2 border-slate-300 rounded-xl ${
         product.selectedProduct.includes(props.item.id) ? "opacity-50" : ""
       } hover:opacity-50 transition-all	duration-200	`}
       onMouseEnter={() => setmouseEnter(true)}
       onMouseLeave={() => setmouseEnter(false)}
-      draggable="true"
+      onDragOver={(event) => props.allowDrop(event)}
+      onDragStart={(event) => props.drag(props.item.rank)}
+      onDrop={(event) => props.drop(event, props.item.rank)}
     >
       <input
         onClick={SelectHandaler}
@@ -26,6 +28,7 @@ const Product = (props) => {
             : "hidden"
         }`}
         type="checkbox"
+        onChange={() => {}}
       ></input>
       <img class="rounded-xl" src={props.item.image} alt="None" />
     </div>

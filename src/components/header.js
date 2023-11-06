@@ -14,11 +14,7 @@ const Header = () => {
       {product.selectedProduct.length > 0 && (
         <div class="flex flex-row justify-between w-full h-14 border-b-2 border-slate-300">
           <div class="flex flex-row">
-            <input
-              class="w-5 mt-1 bg-blue-600"
-              type="checkbox"
-              checked={true}
-            ></input>
+            <input class="w-5 mt-1" type="checkbox" checked={true}></input>
             <p class="text-2xl font-bold mt-3 ml-2">
               {product.selectedProduct.length}{" "}
               {product.selectedProduct.length > 1 ? "Files" : "File"} Selected

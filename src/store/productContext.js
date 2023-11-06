@@ -5,6 +5,7 @@ const ProductContext = React.createContext({
   selectedProduct: [],
   add_Product: () => {},
   remove_Product: () => {},
+  arrange_product: () => {},
 });
 
 export default ProductContext;
